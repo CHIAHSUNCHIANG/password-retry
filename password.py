@@ -8,12 +8,16 @@ password = 'a123456'
 i = 3 #剩餘機會
 
 while i > 0:
+    i = i - 1
     pwd = input('Please type in the password: ')
     if pwd == password:
         print('Lon in success')
         break #逃出迴圈
     else:
-        i = i - 1
-        print('Wrong password. You have', i , 'chances')
-
+        print('Wrong password')
+        #剩餘0次不要印
+        if i > 0:
+            print('You have', i, 'chances')
+        else:
+            print('You are locked')
 
